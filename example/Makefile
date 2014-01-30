@@ -1,13 +1,14 @@
-#gcc -o main main.c person.c ../list.c -Wall
+CC	=	gcc
+#CC	=	clang
 
 all: main.o person.o list.o
-	gcc -o main main.o person.o list.o -Wall
+	$(CC) -o main main.o person.o list.o -Wall
 
 main.o: main.c
-	gcc -c main.c -Wall
+	$(CC) -c main.c -Wall
 
 person.o: person.c person.h
-	gcc -c person.c -Wall
+	$(CC) -c person.c -Wall
 
 list.o: ../list.c ../list.h
-	gcc -c ../list.c -Wall
+	$(CC) -c ../list.c -Wall
