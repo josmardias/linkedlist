@@ -81,3 +81,14 @@ void List_print(List * l) {
 	//printf("%d ", l->length);
 	List_each(l, l->print);
 }
+
+void _print_inverse(struct node * node, void (*print)(void *)) {
+	if (node->next != NULL) {
+		_print_inverse(node->next, print);
+	}
+	print(node->info);
+}
+
+void List_print_inverse(List *l) {
+	_print_inverse(l->head, l->print);
+}

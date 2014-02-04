@@ -12,6 +12,9 @@ int main() {
     puts("All people:");
     List_print(l);
 
+    puts("Inverse:");
+    List_print_inverse(l);
+
     unsigned long long id = 3;
     Person * p = List_findOne(l, (void *)id);
     printf("\nPerson with id %llu:\n", id);
